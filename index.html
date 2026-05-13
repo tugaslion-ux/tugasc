@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liverpiece - Glassmorphism Login</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Menggunakan font Inter dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <div class="login-container">
+        <div class="login-card" id="loginCard">
+            
+            <!-- Bagian Header -->
+            <div class="login-header">
+                <h2>Liverpiece</h2>
+                <p>Welcome back! Please enter your details.</p>
+            </div>
+
+            <!-- Pesan Alert (Muncul jika ada error general) -->
+            <div id="message" style="display: none;"></div>
+
+            <!-- FORM LOGIN (Ditampilkan saat belum login) -->
+            <form id="loginForm" novalidate>
+                <!-- Input Email -->
+                <div class="form-group" id="emailGroup">
+                    <div class="input-wrapper">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Email Address</label>
+                        <div class="focus-border"></div>
+                    </div>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <!-- Input Password -->
+                <div class="form-group" id="passwordGroup">
+                    <div class="input-wrapper password-wrapper">
+                        <input type="password" id="password" name="password" required placeholder=" ">
+                        <label for="password">Password</label>
+                        <button type="button" class="password-toggle" id="passwordToggle" aria-label="Toggle password visibility">
+                            <i class="eye-icon"></i>
+                        </button>
+                        <div class="focus-border"></div>
+                    </div>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <!-- Opsi Tambahan -->
+                <div class="form-options">
+                    <label class="remember-wrapper">
+                        <input type="checkbox" id="rememberMe">
+                        <div class="checkbox-label">
+                            <div class="checkmark"></div>
+                            <span>Remember me</span>
+                        </div>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <!-- Tombol Login -->
+                <button type="submit" class="btn login-btn" id="loginBtn">
+                    <span class="btn-text">Sign In</span>
+                    <div class="btn-loader"></div>
+                </button>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span>or continue with</span>
+                </div>
+
+                <!-- Social Login -->
+                <div class="social-login">
+                    <button type="button" class="social-btn">
+                        <i class="social-icon google-icon"></i>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="social-btn">
+                        <i class="social-icon github-icon"></i>
+                        <span>GitHub</span>
+                    </button>
+                </div>
+
+                <!-- Signup Link -->
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="#">Sign up for free</a></p>
+                </div>
+            </form>
+
+            <!-- TAMPILAN SESUDAH LOGIN (Disembunyikan secara default) -->
+            <div id="successView" class="success-message">
+                <div class="success-icon">✓</div>
+                <h3 id="welcomeText">Selamat Datang!</h3>
+                <p>Kamu berhasil masuk ke sistem Liverpiece.</p>
+                <button id="logoutBtn" class="btn" style="margin-top: 24px; width: 100%;">
+                    <span class="btn-text">Logout dari Akun</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script Utama (Urutan ini penting!) -->
+    <script src="form-utils.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
